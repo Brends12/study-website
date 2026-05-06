@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Study Hub</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #eef2f7;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+
+    button {
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      background: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>📚 Study Hub</h1>
+
+<!-- Flashcard -->
+<div class="card" onclick="flipCard()">
+  <h2 id="flashcard">What is HTML?</h2>
+</div>
+
+<!-- Quiz -->
+<div class="card">
+  <h3>Quiz: What does CSS do?</h3>
+  <button onclick="checkAnswer('style')">Styling</button>
+  <button onclick="checkAnswer('logic')">Logic</button>
+  <p id="result"></p>
+</div>
+
+<script>
+let flipped = false;
+
+function flipCard() {
+  let card = document.getElementById("flashcard");
+
+  if (!flipped) {
+    card.innerText = "HTML structures a webpage";
+    flipped = true;
+  } else {
+    card.innerText = "What is HTML?";
+    flipped = false;
+  }
+}
+
+function checkAnswer(answer) {
+  let result = document.getElementById("result");
+
+  if (answer === "style") {
+    result.innerText = "Correct!";
+  } else {
+    result.innerText = "Wrong answer!";
+  }
+}
+</script>
+
+</body>
+</html>
