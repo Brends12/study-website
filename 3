@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🧠 Practice Quiz</h1>
+
+<div class="card">
+  <h2>What does CPU stand for?</h2>
+
+  <button onclick="check('wrong')">Central Processing Unit</button>
+  <button onclick="check('right')">Computer Personal Unit</button>
+
+  <p id="result"></p>
+</div>
+
+<script>
+function check(answer) {
+  let result = document.getElementById("result");
+
+  if (answer === "wrong") {
+    result.innerText = "Correct!";
+  } else {
+    result.innerText = "Wrong answer!";
+  }
+}
+</script>
+
+</body>
+</html>
